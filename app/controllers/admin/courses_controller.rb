@@ -2,14 +2,14 @@ class Admin::CoursesController < ApplicationController
 
   before_action :find_course, only: [:edit, :update]
 
-  def new
+  def index
     @course = Course.last || Course.new
   end
 
   def create
     @course = Course.new(course_params)
     if @course.save
-      redirect_to course_path
+      redirect_to root_path
     else
       render :new
     end
@@ -20,7 +20,7 @@ class Admin::CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to :back
+      redirect_to root_path
     else
       redirect_to :back, notice: "Course wasn't update"
     end

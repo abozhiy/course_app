@@ -1,9 +1,9 @@
 header.navbar.navbar-fixed-top
   .navbar-inner
     .container-fluid
-      = link_to "Course", course_path, id: "logo"
+      = link_to "Course", root_path, id: "logo"
       nav
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
-              = link_to "Add new course!", new_admin_course_path
+              = link_to "Add new course!", admin_courses_path

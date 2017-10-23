@@ -1,0 +1,15 @@
+.row
+  .col-md-offset-4.col-md-4
+    .panel.panel-default
+      .panel-body
+        = simple_form_for @course, url: admin_course_path(@course), method: :patch do |f|
+          = f.label :value, "New course value:"
+          = f.input :value, label: false
+          = f.label :valid_to, "Valid until:"
+          = f.input :valid_to, label: false, as: :datetime_picker
+          .button-group
+            = f.submit "Save", class: 'btn btn-success', id: 'course_submit_btn'
+            = link_to "Cancel", :back, class: 'btn btn-default', id: 'course_cancel_btn'
+
+javascript:
+  $('.datetimepicker').datetimepicker();

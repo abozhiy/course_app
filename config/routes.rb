@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'courses#show'
-  resources :courses, only: [:show]
+  resources :courses, only: :show
 
   namespace :admin do
-    resources :courses
+    resources :courses, path: '/'
   end
 end
