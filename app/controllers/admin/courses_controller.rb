@@ -11,7 +11,7 @@ class Admin::CoursesController < ApplicationController
     if @course.save
       redirect_to root_path
     else
-      render :new
+      render :index
     end
   end
 
@@ -22,7 +22,7 @@ class Admin::CoursesController < ApplicationController
     if @course.update(course_params)
       redirect_to root_path
     else
-      redirect_to :back, notice: "Course wasn't update"
+      render :index
     end
   end
 
@@ -36,5 +36,4 @@ class Admin::CoursesController < ApplicationController
   def course_params
     params.required(:course).permit(:value, :valid_to)
   end
-
 end

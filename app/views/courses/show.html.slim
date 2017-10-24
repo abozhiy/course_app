@@ -1,4 +1,11 @@
 .row
   .col-md-offset-4.col-md-4
-    h1
-      |Current course is: #{@course.value}
+    h1.col-md-10
+      = "Current course is:"
+    h1.col-md-2.new_course_value
+      = "#{@course.value}"
+
+
+
+
+= subscribe_to "/courses"
